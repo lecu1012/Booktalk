@@ -2,20 +2,20 @@
   <div class="profile_page row">
     <div class="hidden-xs hidden-sm col-md-6 col-lg-6 profile_left">
       <div class="profile_image">
-        <% if @user.image = "" %>
-        <%= image_tag "no_image.png" %>
-        <% else %>
+        <% if @user.image != "" %>
         <%= image_tag @user.image %>
+        <% else %>
+        <%= image_tag "no_image.png" %>
         <% end %>
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 hidden-md hidden-lg profile_top">
       <div class="profile_image_t">
-        <% if @user.image = "" %>
-        <%= image_tag "no_image.png" %>
-        <% else %>
+        <% if @user.image != "" %>
         <%= image_tag @user.image %>
+        <% else %>
+        <%= image_tag "no_image.png" %>
         <% end %>
       </div>
     </div>

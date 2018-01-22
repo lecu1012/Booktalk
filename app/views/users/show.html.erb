@@ -2,7 +2,7 @@
   <div class="profile_page row">
     <div class="hidden-xs hidden-sm col-md-6 col-lg-6 profile_left">
       <div class="profile_image">
-        <% if !@user.image.nil? %>
+        <% if !@user.image_url.nil? %>
         <%= image_tag @user.image ,style: "width:100%;height:auto;"%>
         <% else %>
         <%= image_tag "no_image.png" %>
@@ -12,7 +12,7 @@
 
     <div class="col-xs-12 col-sm-12 hidden-md hidden-lg profile_top">
       <div class="profile_image_t">
-        <% if !@user.image.nil? %>
+        <% if !@user.image_url.nil? %>
         <%= image_tag @user.image ,style: "width:100%;height:auto;"%>
         <% else %>
         <%= image_tag "no_image.png" %>

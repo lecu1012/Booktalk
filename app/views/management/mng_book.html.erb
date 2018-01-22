@@ -1,0 +1,40 @@
+<% if current_user.user_type == 1 %>
+
+<h1>登録済み本一覧</h1>
+<div class="booktalk_list sidebar">
+  <% if @booktalks.present? %>
+  <div class="row">
+    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+    <div class="list col-xs-10 col-sm-10 col-md-8 row">
+      <% @booktalks.each do |booktalk| %>
+      <div class="book_img col-xs-12 col-sm-12 col-md-2">
+        <%= link_to (image_tag(booktalk.image_url, style: "width: 100%;height: auto;display: inline-block;")),
+        talks_path(book_id: booktalk.id) %>
+        <div class="booktalk_title"><%= booktalk.title %><br></div>
+        <p>著者　：<%= booktalk.author %></p>
+        <p>出版日：<%= booktalk.release %></p>
+      </div>
+      <% end %>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div>
+<% end %>
+<br>
+
+<div class='content'>
+  <div id="search-box">
+    <%= form_tag(management_mng_book_path, method: :get) do %>
+        <%= text_field_tag :book, "",  id: "book_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 200px;"%>
+        <button title="検索" type="submit">検索</button>
+    <% end %>
+  </div>
+  <h2>検索結果</h2>
+  <div id='book_list'>
+  <%= render partial: 'book_list' %>
+  </div>
+</div>
+<% else %>
+権限がありません。
+
+<% end %>

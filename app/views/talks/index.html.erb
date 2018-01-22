@@ -1,0 +1,70 @@
+
+<div class="book_info row">
+  <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="book_img col-xs-4 col-sm-3 col-md-3">
+    <%= image_tag @book.image_url, style: "width: auto;height: 36vh;display: inline-block;" %>
+  </div>
+
+  <div class="book_form hidden-xs col-sm-5 col-md-5 col-lg-5">
+    <div class="book_title"><h2><%= @book.title %><br></h2></div>
+    <p>著者　：<%= @book.author %></p>
+    <p>出版日：<%= @book.release %></p>
+    <%# talk_formの呼び出し %>
+    <%= render 'form' %>
+  </div>
+
+  <div class="col-xs-6 hidden-sm hidden-md hidden-lg">
+    <div class="book_title_xs"><h2><%= @book.title %><br></h2></div>
+    <p>著者　：<%= @book.author %></p>
+    <p>出版日：<%= @book.release %></p>
+  </div>
+</div>
+
+<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+  <%# talk_formの呼び出し %>
+  <%= render 'form' %>
+</div>
+
+
+<%# 過去のtalk履歴がある場合、出力 %>
+<% if @talks.present? %>
+  <div class="talk_list">
+    <% @talks.reverse_each do |talk| %>
+      <div class="row">
+        <%# 過去のtalkが自分の入力の場合 %>
+        <% if talk.user_id == current_user.id %>
+          <div class = "col-md-4"></div>
+          <div class = "my_talk col-md-6">
+            <% if  talk.highlight == "" %>
+              <b><%= talk.user.name %></b><br>
+              <div class="talk_message alert alert-info"><%= talk.message %></div>
+            <% else %>
+              <b><%= talk.user.name %></b><br>
+              <div class="talk_message panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title"><u><%= talk.highlight %></u></h3></div>
+                <div class="talk_message_h panel-body alert alert-info"><%= talk.message %></div>
+              </div>
+            <% end %>
+          </div>
+          <div class = "col-md-2"></div>
+          <%# 過去のtalkが他の人の入力の場合 %>
+        <% else %>
+          <div class = "col-md-2"></div>
+          <div class = "other_talk col-md-8">
+            <% if  talk.highlight == "" %>
+              <b><%= talk.user.name %></b><br>
+              <div class="talk_message alert alert-success"><%= talk.message %></div>
+            <% else %>
+              <b><%= talk.user.name %></b><br>
+              <div class="talk_message panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title"><u><%= talk.highlight %></u></h3></div>
+                <div class="talk_message_h alert alert-success"><%= talk.message %></div>
+              </div>
+            <% end %>
+          </div>
+          <div class = "col-md-2"></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

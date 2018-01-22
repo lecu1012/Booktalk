@@ -1,0 +1,67 @@
+<div class="profile">
+  <div class="profile_page row">
+    <div class="hidden-xs hidden-sm col-md-6 col-lg-6 profile_left">
+      <div class="profile_image">
+        <% if @user.image = "" %>
+        <%= image_tag "no_image.png" %>
+        <% else %>
+        <%= image_tag @user.image %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 hidden-md hidden-lg profile_top">
+      <div class="profile_image_t">
+        <% if @user.image = "" %>
+        <%= image_tag "no_image.png" %>
+        <% else %>
+        <%= image_tag @user.image %>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="hidden-xs hidden-sm col-md-6 col-lg-6 profile_right">
+      <div class="profile_info">
+        <h1><%= @user.name %></h1>
+
+        <h2>プロフィール</h2>
+        <p>メールアドレス：<%= @user.email %></p>
+
+        <br>
+        <%= form_with(url: user_path, local: true, method: :patch) do |form| %>
+        <div class="field">
+          <%= form.label "画像変更" %>
+          <%= form.file_field :image, id: :image %>
+          <%= form.hidden_field :id ,value: @user.id %>
+          <%= form.hidden_field :image_cache %>
+          <br>
+          <%= form.submit "変更" ,class: 'form_submit' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 hidden-md hidden-lg profile_buttom">
+      <div class="profile_info_b">
+        <h1><%= @user.name %></h1>
+
+        <h2>プロフィール</h2>
+        <p>メールアドレス：<%= @user.email %></p>
+
+        <br>
+        <%= form_with(model: User, local: true ,method: :patch) do |form| %>
+
+        <div class="field">
+          <%= form.label "画像変更" %>
+          <%= form.file_field :image, id: :user_image %>
+          <%= form.hidden_field :image_cache %>
+          <br>
+          <%= form.submit "変更" ,class: 'form_submit' %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

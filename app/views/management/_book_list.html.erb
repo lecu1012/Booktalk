@@ -1,0 +1,26 @@
+<% if @books.present? %>
+<div class="search_list row">
+  <div class="col-xs-2 col-sm-2 col-md-2"></div>
+  <div class="list col-xs-10 col-sm-10 col-md-8 row">
+    <% @books.each do |book| %>
+    <div class="book_img col-xs-12 col-sm-12 col-md-2">
+      <%= link_to (image_tag(book.image_url, style: "width: 70px;height: 100px;display: inline-block;")),
+      management_bookcreate_path(
+        title: book.title,
+        author: book.author,
+        isbn_code: book.isbn_code,
+        release: book.release,
+        image_url: book.image_url,
+        url: book.url),
+        method: :post
+        %>
+        <div class="booktalk_title"><%= book.title %></div>
+        <p>著者　：<%= book.author %></p>
+        <p>出版日：<%= book.release %></p>
+      </div>
+    <% end %>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+<% end %>

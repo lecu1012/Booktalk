@@ -1,0 +1,271 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.toppage{
+  background-image: image-url("book2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  overflow: hidden;
+  height:90vh;
+  width:100%;
+}
+
+.toppage_message{
+  background: #eaf3ff;
+  opacity: 0.65;
+  height:75vh;
+  margin-top: 5vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 10vw;
+  border-width: 4px;
+  border-color: #000000;
+  border-radius: 30px 30px 30px 30px;
+}
+
+.toppage_message p{
+  text-align:center;
+  font-size: 1.8em;
+  opacity: 1;
+}
+
+.toppage_message h1{
+  text-align:center;
+}
+
+.toppage_message h2{
+  text-align:center;
+}
+
+.toppage_image{
+  text-align:center;
+}
+
+.header{
+  height: 10vh;
+  padding: 0.5em;/*文字周りの余白*/
+  color: #010101;/*文字色*/
+  background: #eaf3ff;/*背景色*/
+  border-bottom: solid 3px #516ab6;/*下線*/
+}
+
+.top_logo{
+  float: left;
+}
+
+.top_menu{
+  margin-top: 35px;
+  float: right;
+}
+
+.clearfix:after { /*floatの解除、ここがポイント*/
+    display:block;
+    clear:both;
+    height:0px;
+    visibility:hidden;
+    content:".";
+}
+
+.book_info {
+  border-bottom: double 4px #333333;
+  overflow: hidden;
+  height: 40vh;
+}
+
+.booktalk_title{
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+  line-height: 20px;
+}
+
+.book_title {
+    position: relative;
+    height: 85px;
+    overflow: hidden;
+    line-height: 20px;
+}
+
+.book_title_xs {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  line-height: 20px;
+}
+
+.book_title:before, .book_title:after {
+  position: absolute;
+  background: #fff;
+}
+
+.book_title:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+}
+
+.book_img {
+  margin-top: 30px;
+}
+
+.book_form h1{
+  font-size:  4em;
+}
+
+.form-all {
+  margin: 2em 0;
+  color: #2c2c2f;
+  background: #cde4ff;/*背景色*/
+  border-radius: 10px 10px 10px 10px;
+}
+
+.form_top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #dde4ff;/*背景色*/
+  border-bottom: double 4px #333333;
+}
+
+.form-under {
+  height: 100px;
+}
+
+.form_highlight{
+  width: 100%;
+  height: 50px;
+  resize: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.form_message{
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.form_submit{
+  width: 20%;
+  height: 30px;
+  resize: none;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.my_talk {
+  text-align: right;
+}
+
+.talk_message {
+  display: inline-block;
+}
+
+.talk_message_h{
+  margin-bottom: 0px;
+}
+
+.other_talk {
+  text-align: left;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+li{
+  list-style: none;
+}
+
+.login_form{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login_button{
+  text-align:center;
+}
+
+.profile_page{
+  background: #FFFFFF;
+  height: 70vh;
+  margin-top: 5vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 10vw;
+  border-width: 4px;
+  border-color: #FFFFFF;
+  border:solid;
+  border-radius: 30px 30px 30px 30px;
+}
+
+.profile_image{
+  position: absolute;
+	top: 10vh;
+	bottom: 0;
+	margin: auto;
+  width: 450px;
+  height:450px;
+  overflow: hidden;
+}
+
+.profile_image_t{
+  width: 450px;
+  height:450px;
+  text-align:center;
+  overflow: hidden;
+}
+
+
+.profile_info{
+  position: absolute;
+	top: 20vh;
+	bottom: 0;
+	margin: auto;
+}
+
+.profile_info_b{
+  position: absolute;
+	top: 20vh;
+  left: 10vw;
+	bottom: 0;
+	margin: auto;
+}
+
+.profile_left{
+  height: 70vh;
+}
+
+.profile_right{
+  height: 70vh;
+}
+
+.profile_top{
+  width: 75vw;
+  height: 20vh;
+}
+
+.profile_buttom{
+  width: 75vw;
+  height: 35vh;
+}
+
+.profile{
+  background-image: image-url("book2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  overflow: hidden;
+  height:90vh;
+  width:100%;
+}

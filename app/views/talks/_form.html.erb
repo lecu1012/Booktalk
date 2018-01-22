@@ -1,0 +1,29 @@
+<div class="form-all">
+
+  <%= form_with(model: @talk, local: true) do |form| %>
+
+  <% if @talk.errors.any? %>
+  <div id="error_explanation">
+    <% @talk.errors.full_messages.each do |msg| %>
+    <%= msg %>
+    <% end %>
+  </div>
+  <% end %>
+
+  <%= form.hidden_field :book_id ,value: @book.id %>
+  <%= form.hidden_field :user_id ,value: current_user.id %>
+
+  <div class="form_top">
+    <b>◆　ハイライト</b>
+    <%= form.text_area :highlight ,class: 'form_highlight' %>
+  </div>
+
+  <div class="form_under">
+    <%= form.text_area :message ,class: 'form_message' %>
+  </div>
+
+  <%= form.submit "コメント" ,class: 'form_submit' %>
+
+  <% end %>
+
+</div>

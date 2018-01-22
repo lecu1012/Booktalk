@@ -1,0 +1,17 @@
+// Place all the styles related to the management controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.booktalk_list {
+  height: 35vh;
+  overflow:scroll;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.search_list {
+  height: 36vh;
+  overflow:scroll;
+  display: flex;
+  flex-wrap: wrap
+}

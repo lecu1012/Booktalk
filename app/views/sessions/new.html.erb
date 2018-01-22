@@ -1,0 +1,18 @@
+<div class="login_form">
+  <h1>ログイン</h1>
+  <%= form_with(scope: :session, url: sessions_path) do |f| %>
+  <div class="form-group">
+    <%= f.label "Email address" %>
+    <%= f.text_field :email , class: "form-control" ,placeholder: "Email" , style: "width: 90%;margin: 0 auto;" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label "Password" %>
+    <%= f.password_field :password , class: "form-control" ,placeholder: "Password" , style: "width: 90%;margin: 0 auto;"%>
+    <br>
+  </div>
+  <div class="login_button">
+    <%= f.submit "ログイン" ,class: "btn btn-default" %>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booktalk</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header clearfix">
+      <div class="top_logo">
+        <%= link_to (image_tag "BOOKTALK_logo.png" , style: "height: 80px;display: inline-block;"),
+        books_index_path %>
+      </div>
+      <div class="top_menu">
+        <ul class="nav nav-tabs">
+          <% if logged_in? %>
+            <li><%= link_to "プロフィール",user_path(current_user.id) ,class: "nav nav-pills nav-justified"  %></li>
+            <% if current_user.user_type == 1 %>
+              <li><%= link_to "本登録" ,management_mng_book_path ,class: "nav nav-pills nav-justified" %></li>
+              <li><%= link_to "ユーザ管理" ,management_mng_user_path ,class: "nav nav-pills nav-justified" %></li>
+            <% end %>
+            <li><%= link_to "ログアウト" ,session_path(current_user.id) ,class: "nav nav-pills nav-justified" ,method: :delete %></li>
+          <% else %>
+            <li><%= link_to "アカウント作成",new_user_path %></li>
+            <li><%= link_to "ログイン" ,new_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
+
+    <% flash.each do |key,value| %>
+      <%= content_tag(:div,value,class:"#{key}")%>
+    <% end %>
+
+    <% if logged_in? %>
+    <% else %>
+      <div class="toppage">
+        <div class="toppage_message">
+          <div class="toppage_image"><%= image_tag "BOOKTALK_logo.png" , style: "height: 200px;display: inline-block;"  %></div>
+          <%= yield %>
+        </div>
+      </div>
+      <% end %>
+
+  </body>
+</html>

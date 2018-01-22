@@ -1,0 +1,62 @@
+<% if current_user.user_type == 1 %>
+<div class='content'>
+  <div id="search-box">
+    <%= form_tag(management_mng_user_path, method: :get) do %>
+    <%= text_field_tag :user, "",  id: "user_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 200px;"%>
+    <button title="検索" type="submit">検索</button>
+    <% end %>
+  </div>
+</div>
+
+<% if @users.present? %>
+<div class="user_list row">
+  <div class="hidden-xs col-sm-2"></div>
+    <!-- Default panel contents -->
+    <div class="col-xs-12 col-sm-8">
+    <div class="panel-heading">ユーザ一覧</div>
+
+    <!-- Table -->
+    <table class="table">
+      <tr class="success">
+        <th>#</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>Type</th>
+        <th></th>
+        <th></th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <% if !user.user_type.nil? %>
+          <td>管理者</td>
+          <td>
+            <ul>
+              <li><%= link_to '一般へ', management_useredit_path(id: user.id,type: user.user_type), method: :post ,class: 'btn btn-prymary' %></li>
+            </ul>
+          </td>
+        <% else %>
+          <td>一般</td>
+          <td>
+            <ul>
+            <li><%= link_to '管理者へ', management_useredit_path(id: user.id,type: user.user_type), method: :post ,class: 'btn btn-danger' %></li>
+            </ul>
+          </td>
+        <% end %>
+        <td>
+          <ul>
+          <li><%= link_to '削除', management_useredit_path(id: user.id), method: :delete ,class: 'btn btn-danger' %></li>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  </div>
+  <div class="hidden-xs col-sm-2"></div>
+</div>
+<% end %>
+<% else %>
+権限がありません。
+<% end %>

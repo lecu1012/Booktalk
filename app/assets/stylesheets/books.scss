@@ -69,7 +69,7 @@
 
 .book_info {
   border-bottom: double 4px #333333;
-  overflow: hidden;
+  overflow:scroll;
   height: 40vh;
 }
 
@@ -191,6 +191,7 @@ li{
 .login_form{
   width: 80%;
   margin: 0 auto;
+  overflow: scroll;
 }
 
 .login_button{
@@ -245,10 +246,12 @@ li{
 
 .profile_left{
   height: 70vh;
+  overflow: hidden;
 }
 
 .profile_right{
   height: 70vh;
+  overflow: hidden;
 }
 
 .profile_top{

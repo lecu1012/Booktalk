@@ -23,7 +23,6 @@ class ManagementController < ApplicationController
         power: "Not kindle"
       )
 
-
       # 本のタイトル,画像URL,
       @books = []
       @isbn = []

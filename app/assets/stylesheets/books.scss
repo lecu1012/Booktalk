@@ -271,3 +271,8 @@ li{
   height:90vh;
   width:100%;
 }
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #fff;
+}

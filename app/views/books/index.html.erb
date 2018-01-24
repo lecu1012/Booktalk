@@ -1,9 +1,9 @@
 <% if @booktalks.present? %>
   <div class="row">
     <div class="col-xs-2 col-sm-2 col-md-2"></div>
-    <div class="list col-xs-10 col-sm-10 col-md-8 row">
+    <div class="list col-xs-8 col-sm-8 col-md-8 row">
       <% @booktalks.each do |booktalk| %>
-      <div class="book_img col-xs-12 col-sm-12 col-md-3">
+      <div class="book_img col-xs-3 col-sm-3 col-md-3">
         <%= link_to (image_tag(booktalk.image_url, style: "width: 100%;height: auto;display: inline-block;")),
         talks_path(book_id: booktalk.id) %>
         <div class="booktalk_title"><%= booktalk.title %><br></div>
@@ -11,7 +11,7 @@
         <p>出版日：<%= booktalk.release %></p>
       </div>
       <% end %>
-      <div class="col-md-2"></div>
+      <div class="col-xs-2 col-sm-2 col-md-2"></div>
     </div>
   </div>
 <% end %>

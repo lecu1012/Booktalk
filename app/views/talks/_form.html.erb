@@ -1,9 +1,10 @@
-<div class="form-all">
+<div class="form-all clearfix">
 
   <%= form_with(model: @talk, local: true) do |form| %>
 
   <% if @talk.errors.any? %>
   <div id="error_explanation">
+    <% pry-rails %>
     <% @talk.errors.full_messages.each do |msg| %>
     <%= msg %>
     <% end %>
@@ -14,16 +15,17 @@
   <%= form.hidden_field :user_id ,value: current_user.id %>
 
   <div class="form_top">
-    <b>◆　ハイライト</b>
-    <%= form.text_area :highlight ,class: 'form_highlight' %>
+    <%= form.text_area :highlight ,placeholder: "お気に入りの一文",class: 'form_highlight' %>
   </div>
 
   <div class="form_under">
-    <%= form.text_area :message ,class: 'form_message' %>
+    <%= form.text_area :message ,placeholder: "感想・コメント",class: 'form_message' %>
   </div>
 
   <%= form.submit "コメント" ,class: 'form_submit' %>
+  <p class="form_comment">※各項目、上限140文字</p>
 
   <% end %>
+
 
 </div>

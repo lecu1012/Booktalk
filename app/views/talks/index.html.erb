@@ -41,8 +41,8 @@
             <% else %>
               <b><%= talk.user.name %></b><br>
               <div class="talk_message panel panel-default">
-                <div class="panel-heading"><h3 class="panel-title"><u><%= talk.highlight %></u></h3></div>
-                <div class="talk_message_h panel-body alert alert-info"><%= talk.message %></div>
+                <div class="panel-heading"><h3 class="panel-title"><u><%= simple_format(talk.highlight) %></u></h3></div>
+                <div class="talk_message_h panel-body alert alert-info"><%= simple_format(talk.message) %></div>
               </div>
             <% end %>
           </div>
@@ -50,19 +50,19 @@
           <%# 過去のtalkが他の人の入力の場合 %>
         <% else %>
           <div class = "col-md-2"></div>
-          <div class = "other_talk col-md-8">
+          <div class = "other_talk col-md-6">
             <% if  talk.highlight == "" %>
               <b><%= talk.user.name %></b><br>
               <div class="talk_message alert alert-success"><%= talk.message %></div>
             <% else %>
               <b><%= talk.user.name %></b><br>
               <div class="talk_message panel panel-default">
-                <div class="panel-heading"><h3 class="panel-title"><u><%= talk.highlight %></u></h3></div>
-                <div class="talk_message_h alert alert-success"><%= talk.message %></div>
+                <div class="panel-heading"><h3 class="panel-title"><u><%= simple_format(talk.highlight) %></u></h3></div>
+                <div class="talk_message_h alert alert-success"><%= simple_format(talk.message) %></div>
               </div>
             <% end %>
           </div>
-          <div class = "col-md-2"></div>
+          <div class = "col-md-4"></div>
         <% end %>
       </div>
     <% end %>

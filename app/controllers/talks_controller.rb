@@ -10,6 +10,8 @@ class TalksController < ApplicationController
     if @talk.save
       redirect_to :controller => 'talks', :action => 'index', :book_id => @talk.book_id
     else
+      @book = Book.find_by(id: @talk.book_id)
+      @talks = Talk.where(book_id: @talk.book_id)
       render 'index'
     end
   end

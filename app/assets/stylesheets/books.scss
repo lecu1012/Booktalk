@@ -2,46 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.toppage{
-  background-image: image-url("book2.jpg");
-  background-repeat: no-repeat;
-  background-size:cover;
-  overflow: hidden;
-  height:90vh;
-  width:100%;
-}
-
-.toppage_message{
-  background: #eaf3ff;
-  opacity: 0.65;
-  height:75vh;
-  margin-top: 5vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  margin-bottom: 10vw;
-  border-width: 4px;
-  border-color: #000000;
-  border-radius: 30px 30px 30px 30px;
-}
-
-.toppage_message p{
-  text-align:center;
-  font-size: 1.8em;
-  opacity: 1;
-}
-
-.toppage_message h1{
-  text-align:center;
-}
-
-.toppage_message h2{
-  text-align:center;
-}
-
-.toppage_image{
-  text-align:center;
-}
-
+/* 全画面のヘッダー */
 .header{
   height: 90px;
   color: #010101;/*文字色*/
@@ -49,15 +10,18 @@
   border-bottom: solid 3px #516ab6;/*下線*/
 }
 
+/* 全画面のヘッダーロゴ */
 .top_logo{
   float: left;
 }
 
+/* 全画面のヘッダーのメニュー */
 .top_menu{
   margin-top: 3vh;
   float: right;
 }
 
+/* クリアフィックス */
 .clearfix:after { /*floatの解除、ここがポイント*/
     display:block;
     clear:both;
@@ -66,10 +30,17 @@
     content:".";
 }
 
+/* talkページの本情報（上段）*/
 .book_info {
   border-bottom: double 4px #333333;
-  overflow:scroll;
+  overflow-y:scroll;
   height: 40vh;
+}
+
+/* 本の画像を表示 */
+.book_image{
+  width: 100%;height: auto;
+  display: inline-block;
 }
 
 .booktalk_title{
@@ -79,6 +50,7 @@
   line-height: 20px;
 }
 
+//talkページの本タイトル
 .book_title {
     position: relative;
     height: 85px;
@@ -86,6 +58,7 @@
     line-height: 20px;
 }
 
+//talkページの本タイトル（画面サイズxsの場合）
 .book_title_xs {
   position: relative;
   height: 180px;
@@ -106,10 +79,6 @@
 
 .book_img {
   margin-top: 30px;
-}
-
-.book_form h1{
-  font-size:  4em;
 }
 
 .form-all {

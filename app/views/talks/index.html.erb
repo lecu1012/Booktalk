@@ -1,32 +1,41 @@
 
-<div class="book_info row">
-  <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div>
-  <div class="book_img col-xs-4 col-sm-3 col-md-3">
-    <%= image_tag @book.image_url, style: "width: 100%;height: auto;display: inline-block;" %>
+<!-- talkページの本の情報（上段）-->
+<div class="book_info row"> <%# row_1 %>
+
+  <!-- 左に空間を開ける（画面サイズがsm以上の場合）-->
+  <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div> <%# col_1 %>
+
+  <!-- 本の画像を表示 col_1 -->
+  <div class="book_img col-xs-4 col-sm-3 col-md-3"> <%# col_1 %>
+    <%= image_tag @book.image_url, class: "book_image" %>
   </div>
 
-  <div class="book_form hidden-xs col-sm-5 col-md-5 col-lg-5">
+  <!-- 本のタイトル/著者/出版日とフォームを表示
+      （画面サイズがsm以上の場合はタイトルの下にフォームを表示させる） -->
+  <div class="hidden-xs col-sm-5 col-md-5 col-lg-5"> <%# col_1 %>
     <div class="book_title"><h2><%= @book.title %><br></h2></div>
     <p>著者　：<%= @book.author %></p>
     <p>出版日：<%= @book.release %></p>
-    <%# talk_formの呼び出し %>
     <%= render 'form' %>
   </div>
 
-  <div class="col-xs-6 hidden-sm hidden-md hidden-lg">
+  <!-- 本のタイトル/著者/出版日を表示（画面サイズがxsの場合） -->
+  <div class="col-xs-6 hidden-sm hidden-md hidden-lg"> <%# col_1 %>
     <div class="book_title_xs"><h2><%= @book.title %><br></h2></div>
     <p>著者　：<%= @book.author %></p>
     <p>出版日：<%= @book.release %></p>
   </div>
+
+  <!-- フォームを表示
+      （画面サイズがxsの場合は、本画像、タイトル等の下にフォームを表示させる） -->
+  <div class="col-xs-12 hidden-sm hidden-md hidden-lg"> <%# col_1 %>
+    <%# talk_formの呼び出し %>
+    <%= render 'form' %>
+  </div>
+
 </div>
 
-<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-  <%# talk_formの呼び出し %>
-  <%= render 'form' %>
-</div>
-
-
-<%# 過去のtalk履歴がある場合、出力 %>
+<!-- talkページのチャット（下段） -->
 <% if @talks.present? %>
   <div class="talk_list">
     <% @talks.reverse_each do |talk| %>

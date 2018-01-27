@@ -4,7 +4,6 @@
 
   <% if @talk.errors.any? %>
   <div id="error_explanation">
-    <% pry-rails %>
     <% @talk.errors.full_messages.each do |msg| %>
     <%= msg %>
     <% end %>

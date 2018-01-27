@@ -1,3 +1,50 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* loginページのレイアウト */
+.toppage{
+  background-image: image-url("book2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  overflow: hidden;
+  height:90vh;
+  width:100%;
+}
+
+/* logonページのロゴ/コメント */
+.toppage_message{
+  background: #eaf3ff;
+  opacity: 0.65;
+  height:75vh;
+  margin-top: 5vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 10vw;
+  border-width: 4px;
+  border-color: #000000;
+  border-radius: 30px 30px 30px 30px;
+}
+
+/* loginページのコメント */
+.toppage_message p{
+  text-align:center;
+  font-size: 1.8em;
+  opacity: 1;
+}
+
+/* loginページのコメント */
+.toppage_message h1{
+  text-align:center;
+}
+
+/* loginページのコメント */
+.toppage_message h2{
+  text-align:center;
+}
+
+/* loginページのロゴ */
+.toppage_image{
+  text-align:center;
+}
